@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components'
 
 import { Header } from '../Header';
@@ -16,6 +16,17 @@ export function Layout() {
   const theme = useMemo(() => {
     return themes[currentTheme] || themes.dark
   }, [currentTheme]);
+
+  useEffect(() => {
+    function handleScroll() {
+      console.log('scrollou');
+    }
+    document.addEventListener('scroll', handleScroll)
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, []);
 
   return (
     <>
