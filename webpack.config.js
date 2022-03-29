@@ -7,11 +7,11 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle[fullhash].js'
+    filename: 'bundle[fullhash].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html')
+      template: path.resolve(__dirname, 'public', 'index.html'),
     }),
     new CleanWebpackPlugin(),
   ],
@@ -30,16 +30,17 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
-            }
+              modules: true,
+            },
           },
-          'sass-loader'
-        ]
-      }
-    ]
+          'sass-loader',
+        ],
+      },
+    ],
   },
 
   devServer: {
-    port: 3000
-  }
+    port: 3000,
+    historyApiFallback: true,
+  },
 };

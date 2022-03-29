@@ -7,5 +7,5 @@ export function Post({ title, description }) {
       <h2>{title}</h2>
       <small>{description}</small>
     </Container>
-  )
+  );
 }

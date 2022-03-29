@@ -8,12 +8,9 @@ export function Header() {
   return (
     <Container>
       <h1>Blog</h1>
-      <button
-        onClick={handleToggleTheme}
-        type='button'
-      >
+      <button onClick={handleToggleTheme} type="button">
         {currentTheme === 'light' ? '🌚' : '🌞'}
       </button>
     </Container>
-  )
+  );
 }

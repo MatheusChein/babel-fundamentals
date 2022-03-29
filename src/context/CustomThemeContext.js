@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useMemo } from 'react';
 
 export const CustomThemeContext = createContext();
 
@@ -6,7 +6,7 @@ export function CustomThemeContextProvider({ children }) {
   const [currentTheme, setCurrentTheme] = useState(() => {
     const theme = localStorage.getItem('blog-theme');
 
-    return theme ?? 'dark'
+    return theme ?? 'dark';
   });
 
   function handleToggleTheme() {
@@ -17,15 +17,22 @@ export function CustomThemeContextProvider({ children }) {
       } else {
         newState = 'dark';
       }
-      localStorage.setItem('blog-theme', newState)
-      return newState
+      localStorage.setItem('blog-theme', newState);
+      return newState;
     });
-    
   }
 
+  const contextValue = useMemo(
+    () => ({
+      handleToggleTheme,
+      currentTheme,
+    }),
+    [currentTheme],
+  );
+
   return (
-    <CustomThemeContext.Provider value={{ handleToggleTheme, currentTheme }}>
+    <CustomThemeContext.Provider value={contextValue}>
       {children}
     </CustomThemeContext.Provider>
-  )
+  );
 }

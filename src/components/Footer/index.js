@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components';
 
 import { useCustomTheme } from '../../hooks/useCustomTheme';
 import { Container } from './styles';
@@ -13,10 +13,7 @@ export function Footer() {
     <>
       <Container>
         <span>Matheus Blog 2022</span>
-        <button
-          onClick={handleToggleTheme}
-          type='button'
-        >
+        <button onClick={handleToggleTheme} type="button">
           {currentTheme === 'light' ? '🌚' : '🌞'}
         </button>
       </Container>
@@ -31,5 +28,5 @@ export function Footer() {
         Exemplo do useTheme. Agora estamos no tema {currentTheme}
       </div>
     </>
-  )
+  );
 }
