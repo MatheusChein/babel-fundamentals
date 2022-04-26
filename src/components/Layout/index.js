@@ -33,7 +33,7 @@ export function Layout() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
-      <NavContainer>
+      <NavContainer style={{ position: 'relative' }}>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/posts">Posts</StyledLink>
       </NavContainer>

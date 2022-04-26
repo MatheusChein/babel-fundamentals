@@ -44,6 +44,7 @@
     "react/jsx-no-bind": "off",
     "react/button-has-type": "off",
     "react/require-default-props": "off",
+    "react/jsx-one-expression-per-line": "off",
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "space-before-function-paren": "off",
